@@ -29,16 +29,16 @@ var languages = {
 
 function setLang(lang){
     if (lang){
-        localStorageManager.setItem('oTranscribe-language',lang);
+        localStorageManager.setItem('FastDeer-language',lang);
         window.location.reload();
     }
 };
 function applyLang(callback){
-    var lang = localStorageManager.getItem('oTranscribe-language');
+    var lang = localStorageManager.getItem('FastDeer-language');
     if(lang) {
         document.webL10n.setLanguage(lang);
     } else {
-        document.webL10n.setLanguage('en');
+        document.webL10n.setLanguage('zh-hans');
     }
 }
 

@@ -13,7 +13,7 @@ function loadFile( fileRaw ){
         remindOfMediaFile(file.media, file['media-source'], file['media-time']);
     } catch (e) {
         console.warn(e);
-        showMessage('This is not a valid oTranscribe format (.otr) file.');
+        showMessage('This is not a valid FastDeer format (.otr) file.');
     }
 }
 

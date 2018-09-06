@@ -69,7 +69,7 @@ function migrateToLocalStorageManager(){
     var backupList = [];
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
-        if (key.indexOf('oTranscribe-backup') === 0) {
+        if (key.indexOf('FastDeer-backup') === 0) {
             var item = {
                 value: localStorage.getItem( key ),
                 timestamp: key.split('-')[2]
@@ -211,11 +211,11 @@ function listFiles(){
     } catch (e) {
         console.error(e);
         console.error('Problem listing files from localStorage.');
-        showMessage('Error listing files from localStorage. Manually clearing localStorage data may fix this. <a href="./help#why_is_otranscribe_is_no_longer_saving_backups">Instructions here</a>.');
+        showMessage('Error listing files from localStorage. Manually clearing localStorage data may fix this. <a href="./help#why_is_FastDeer_is_no_longer_saving_backups">Instructions here</a>.');
         throw(e);
     }
     for (var i = 0; i < ls.length; i++) {
-        if (ls[i].key.indexOf('oTranscribe-backup') > -1) {
+        if (ls[i].key.indexOf('FastDeer-backup') > -1) {
             result.push( ls[i].key );
         }
     }
@@ -228,14 +228,14 @@ function saveBackup(){
     // save current text to timestamped localStorageManager item
     var text = getTexteditorContents();
     var timestamp = new Date().getTime();
-    localStorageManager.setItem('oTranscribe-backup-'+timestamp, text);
+    localStorageManager.setItem('FastDeer-backup-'+timestamp, text);
     // and bleep icon
     $('.sbutton.backup').addClass('flash');
     setTimeout(function(){
         $('.sbutton.backup').removeClass('flash');
     },1000);
     // and add to tray
-    var newBlock = generateBlock('oTranscribe-backup-'+timestamp);
+    var newBlock = generateBlock('FastDeer-backup-'+timestamp);
     newBlock.className += ' new-block';
     $('.backup-window').prepend( newBlock );
     $( newBlock ).animate({
@@ -253,7 +253,7 @@ function restoreBackup(timestamp){
     saveBackup();
     const restoreErrorMessage = document.webL10n.get('restore-error');
     try {
-        var item = localStorageManager.getItem('oTranscribe-backup-'+timestamp);
+        var item = localStorageManager.getItem('FastDeer-backup-'+timestamp);
         if ( item ) {
             var newText = item;
             setEditorContents(newText, {transition: true});

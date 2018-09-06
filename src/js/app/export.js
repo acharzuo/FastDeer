@@ -45,7 +45,7 @@ exportFormats.download.push({
 });
 
 exportFormats.download.push({
-    name: 'oTranscribe format',
+    name: 'FastDeer format',
     extension: 'otr',
     fn: (txt) => {
         let result = {};

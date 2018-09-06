@@ -5,7 +5,7 @@ const localStorageManager = require('local-storage-manager');
 import defaultSettings from './defaults.json';
 
 export function getSettings() {
-    const savedSettings = localStorageManager.getItem('oTranscribe-settings');
+    const savedSettings = localStorageManager.getItem('FastDeer-settings');
     let settings = Object.assign({}, defaultSettings);
     if (savedSettings) {
         settings = Object.assign({}, defaultSettings, savedSettings);
@@ -28,7 +28,7 @@ class Settings extends Component {
         this.state = getSettings();
     }
     componentDidUpdate(prevProps, prevState) {
-        localStorageManager.setItem('oTranscribe-settings', this.state);
+        localStorageManager.setItem('FastDeer-settings', this.state);
         refreshApp.keyboardShortcuts(this.state, prevState);
     }
     render() {

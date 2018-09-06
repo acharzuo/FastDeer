@@ -1,6 +1,6 @@
-## oTranscribe
+## FastDeer
 
-**[oTranscribe](http://oTranscribe.com/)** is a free web app designed to take the pain out of transcribing recorded interviews.
+**[FastDeer](http://FastDeer.com/)** is a free web app designed to take the pain out of transcribing recorded interviews.
 
 - Pause (ESC), rewind (F1) and fast-forward (F2) without taking your hands off the keyboard
 - Adjust playback speed with a slider or using F3/F4
@@ -12,13 +12,13 @@
 
 ### Download a copy
 
-Although a [web version](http://otranscribe.com/) is available, you can install oTranscribe anywhere by following these steps:
+Although a [web version](http://FastDeer.com/) is available, you can install FastDeer anywhere by following these steps:
 
-1. Download [the current ZIP archive](https://github.com/otranscribe/otranscribe/archive/master.zip).
+1. Download [the current ZIP archive](https://github.com/FastDeer/FastDeer/archive/master.zip).
 2. Compile the CSS and JS with Webpack (see below for more detailed instructions).
 3. Upload the files in the newly-generated `dist` folder to a server of your choice.
 
-Please note that, in Chrome, local copies oTranscribe may not run correctly due to the browser's [privacy settings](http://programmers.stackexchange.com/questions/72435/why-is-google-blocking-users-from-accessing-their-local-file-system-in-chromium).
+Please note that, in Chrome, local copies FastDeer may not run correctly due to the browser's [privacy settings](http://programmers.stackexchange.com/questions/72435/why-is-google-blocking-users-from-accessing-their-local-file-system-in-chromium).
 
 ### Compiling the CSS and JavaScript
 
@@ -32,7 +32,7 @@ For a sourcemap and 'watch-for-changes', run `make build_dev`.
 
 ### OTR file format
 
-oTranscribe has its own file format (.otr), which is just a JSON file with the following parameters:
+FastDeer has its own file format (.otr), which is just a JSON file with the following parameters:
 
 * **text**: The raw HTML of the transcript
 * **media**: If available, the name of the last media used
@@ -41,7 +41,7 @@ oTranscribe has its own file format (.otr), which is just a JSON file with the f
 
 ### Running tests
 
-oTranscribe is not fully tested. There are only a small number of tests, for data migration.
+FastDeer is not fully tested. There are only a small number of tests, for data migration.
 
 To setup, [install CasperJS](http://docs.casperjs.org/en/latest/installation.html).
 
@@ -76,4 +76,4 @@ Translations have been provided by the following talented and generous volunteer
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
 *   Greek: [Konstantinos Alexiou](http://konalexiou.net)
 
-More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
+More about translating FastDeer [here](https://github.com/FastDeer/FastDeer/wiki/Help-translate-FastDeer).

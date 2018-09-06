@@ -4,8 +4,8 @@ casper.test.begin('autosave migration', 7, function(test) {
     casper.thenEvaluate(function() {
         localStorage.clear();
         localStorage.setItem('autosave','<p>Document at latest stage...</p>');
-        localStorage.setItem('oTranscribe-backup-0000000','<p>Document at earlier stage.</p>');
-        localStorage.setItem('oTranscribe-backup-0222200','<p>Document at latest stage...</p>');
+        localStorage.setItem('FastDeer-backup-0000000','<p>Document at earlier stage.</p>');
+        localStorage.setItem('FastDeer-backup-0222200','<p>Document at latest stage...</p>');
     });
 
     casper.then(function(){
@@ -34,13 +34,13 @@ casper.test.begin('autosave migration', 7, function(test) {
         }), '<p>Document at latest stage...</p>');
 
         test.assertEquals(casper.evaluate(function() {
-            return localStorageManager.getItemMetadata('oTranscribe-backup-0000000').timestamp;
+            return localStorageManager.getItemMetadata('FastDeer-backup-0000000').timestamp;
         }), '0000000');
         test.assertEquals(casper.evaluate(function() {
-            return localStorageManager.getItem('oTranscribe-backup-0000000');
+            return localStorageManager.getItem('FastDeer-backup-0000000');
         }), '<p>Document at earlier stage.</p>');
         test.assertEquals(casper.evaluate(function() {
-            return localStorage.getItem('oTranscribe-backup-0000000');
+            return localStorage.getItem('FastDeer-backup-0000000');
         }), '');
 
     });
